@@ -136,7 +136,7 @@
     var media = parseFloat(document.getElementById('mediaMuestral').value);
     var tz = parseFloat(document.getElementById('valorTz').value);
     var desv = parseFloat(document.getElementById('desviacion').value);
-    var tamano = parseFloat(document.getElementById('tamanoMuestra').value);
+    var tamano = parseInt(document.getElementById('tamanoMuestra').value);
     var raizTamano = Math.sqrt(tamano);
     var errorEstandar = desv / raizTamano;
     var margenError = tz * errorEstandar;
