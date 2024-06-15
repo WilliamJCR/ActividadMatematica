@@ -142,7 +142,7 @@
     var margenError = tz * errorEstandar;
     var limiteInferior = media - margenError;
     var limiteSuperior = media + margenError;
-    document.getElementById('resultadoIntervalo').innerHTML = 'Punto Inferior del rango: ' + limiteInferior.toFixed(2) + '<br>Punto Superior del rango: ' + limiteSuperior.toFixed(2);
+    document.getElementById('resultadoIntervalo').innerHTML = 'Limite Inferior: ' + limiteInferior.toFixed(2) + '<br>Limite Superior: ' + limiteSuperior.toFixed(2);
     document.getElementById('resultadoIntervalo').classList.add('visible');
     document.getElementById('pasosIntervalo').classList.remove('visible');
     var pasosHTML = 'Paso 1: Raíz del tamaño de la muestra = ' + raizTamano.toFixed(2) + '<br>' +
