@@ -142,14 +142,14 @@
     var margenError = tz * errorEstandar;
     var limiteInferior = media - margenError;
     var limiteSuperior = media + margenError;
-    document.getElementById('resultadoIntervalo').innerHTML = 'Limite Inferior: ' + limiteInferior.toFixed(2) + '<br>Limite Superior: ' + limiteSuperior.toFixed(2);
+    document.getElementById('resultadoIntervalo').innerHTML = 'Intervalo Resultado: [ ' + limiteInferior.toFixed(4) + ' , ' + limiteSuperior.toFixed(4) + ' ]' +'<br>Limite Inferior: ' + limiteInferior.toFixed(4) + '<br>Limite Superior: ' + limiteSuperior.toFixed(4);
     document.getElementById('resultadoIntervalo').classList.add('visible');
     document.getElementById('pasosIntervalo').classList.remove('visible');
-    var pasosHTML = 'Paso 1: Raíz del tamaño de la muestra = ' + raizTamano.toFixed(2) + '<br>' +
-                    'Paso 2: Desviación / Raíz del tamaño de la muestra = ' + errorEstandar.toFixed(2) + '<br>' +
-                    'Paso 3: t o z * (Desviación / Raíz del tamaño de la muestra) = ' + margenError.toFixed(2) + '<br>' +
-                    'Paso 4: Media - resultado Paso 3 = ' + limiteInferior.toFixed(2) + '<br>' +
-                    'Paso 5: Media + resultado Paso 3 = ' + limiteSuperior.toFixed(2);
+    var pasosHTML = 'Paso 1: Raíz del tamaño de la muestra = ' + raizTamano.toFixed(4) + '<br>' +
+                    'Paso 2: Desviación / Raíz del tamaño de la muestra = ' + errorEstandar.toFixed(4) + '<br>' +
+                    'Paso 3: t o z * (Desviación / Raíz del tamaño de la muestra) = ' + margenError.toFixed(4) + '<br>' +
+                    'Paso 4: Limite Inferior (Media - resultado Paso 3) = ' + limiteInferior.toFixed(4) + '<br>' +
+                    'Paso 5: Limite Superior (Media + resultado Paso 3) = ' + limiteSuperior.toFixed(4);
     document.getElementById('pasosIntervalo').innerHTML = pasosHTML;
   }
 
@@ -160,14 +160,14 @@
     var mediaMuestral = sumaDatos / tamano;
     var varianza = datos.reduce((a, b) => a + Math.pow(b - mediaMuestral, 2), 0) / (tamano - 1);
     var desviacionEstandar = Math.sqrt(varianza);
-    document.getElementById('resultadoEstimacion').innerHTML = 'Media Muestral: ' + mediaMuestral.toFixed(2) + '<br>Varianza: ' + varianza.toFixed(2) + '<br>Desviación Estándar: ' + desviacionEstandar.toFixed(2);
+    document.getElementById('resultadoEstimacion').innerHTML = 'Tamaño de la muestra: ' + tamano + '<br>Media Muestral: ' + mediaMuestral.toFixed(4) + '<br>Varianza: ' + varianza.toFixed(4) + '<br>Desviación Estándar: ' + desviacionEstandar.toFixed(4);
     document.getElementById('resultadoEstimacion').classList.add('visible');
     document.getElementById('pasosEstimacion').classList.remove('visible');
-    var pasosHTML = 'Paso 1: Tamaño de la muestra = ' + tamano + '<br>' +
-                    'Paso 2: Suma de los datos = ' + sumaDatos.toFixed(2) + '<br>' +
-                    'Paso 3: Media Muestral (suma de los datos/Tamaño de la muestra) = ' + mediaMuestral.toFixed(2) + '<br>' +
-                    'Paso 4: Varianza (restar la media a cada dato y elevarlo al cuadrado, luego sumar los resultados y dividir entre tamaño de la muestra menos 1) = ' + varianza.toFixed(2) + '<br>' +
-                    'Paso 5: Desviación Estándar (sacar la raíz cuadrada de la varianza)= ' + desviacionEstandar.toFixed(2);
+    var pasosHTML = '- Paso 1: Se cuenta la cantidad de datos ingresados para determinar el Tamaño de la muestra = ' + tamano + '<br>' +
+                    '- Paso 2: Suma de los datos = ' + sumaDatos.toFixed(2) + '<br>' +
+                    '- Paso 3: Media Muestral (suma de los datos/Tamaño de la muestra) = ' + mediaMuestral.toFixed(2) + '<br>' +
+                    '- Paso 4: Varianza (restar la media a cada dato y elevarlo al cuadrado, luego sumar los resultados y dividir entre tamaño de la muestra menos 1) = ' + varianza.toFixed(2) + '<br>' +
+                    '- Paso 5: Desviación Estándar (sacar la raíz cuadrada de la varianza)= ' + desviacionEstandar.toFixed(2);
     document.getElementById('pasosEstimacion').innerHTML = pasosHTML;
   }
   function recargarPagina(){
